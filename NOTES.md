@@ -41,8 +41,8 @@ How to Build a CLI Gem
   user then types in a number (eg "1") and details expand for that coin
 
 
-  Name      Market Cap        Price       Volume(24h)       Circulating Supply  Change(24h)
-  Bitcoin   $172,44,976,937   $10,266.40  $8,576,320,000    16,835,987 BTC      -9.10%
+  Name      Market Cap        Price       Volume(24h)       Circulation        Change(24h)
+  Bitcoin   $172,44,976,937   $10,266.40  $8,576,320,000    16,835,987 BTC     -9.10%
 
 
 - Asks user if they want to go to see (1 - 5)...
