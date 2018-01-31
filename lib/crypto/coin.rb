@@ -22,8 +22,8 @@ class Crypto::Coin
     #  15.ICON
     #"
     # now these new coin instances will be communicating with the website but it should look something like this
-    coin_1 = self.new
-    #coin_1.name = "Bitcoin"
+    coin = self.new
+    coin.name = "Bitcoin"
     #coin_1.market_cap = "$172,44,976,937"
     #coin_1.price = "$10,266.40"
     #coin_1.volume = "$8,576,320,000 "

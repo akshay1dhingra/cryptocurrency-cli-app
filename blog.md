@@ -15,4 +15,5 @@ LOG: I was successfully able to add the new SSH key for my work computer and loa
 
 LOG: I figured out why BASH was not printing out my 'puts' list immediately. BASH uses unix commands and when BASH is used on windows, it inherits the unix behavior of buffering strings internally and writing the output in bigger chunks. This was solved by adding 'STDOUT.sync = true' in my '.call' method before the command line hits the chunk of strings. When sync mode is true, all output is immediately flushed to the underlying operating system and is not buffered internally.
 
-LOG: 
+LOG: followed the video up until 35.23 and getting a weird error when running the bin/crypto file
+it is saying that cli.rb line 37 has a string literal in condition and in cli.rb line 19 'block in list_coins has an undefined 'name' for "Bitcoin":String <NoMethodError>... not sure why thats happening because I have given .name the attr_accessor :name... could be something else. 
