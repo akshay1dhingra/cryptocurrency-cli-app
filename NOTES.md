@@ -53,5 +53,14 @@ How to Build a CLI Gem
   5. type "5" or "exit" to exit
 
 
+- What is a Coin?
 
-  end
+  1. a coin has a name
+  2. a coin has a market cap
+  3. a coin has a price
+  4. a coin has a volume
+  5. a coin has circulating supply
+  6. a coin has change percentage
+  7. a coin has a chart
+  8. a coin has a url
+  9. a coin has a social media board 

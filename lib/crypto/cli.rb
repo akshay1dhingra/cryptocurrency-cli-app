@@ -3,13 +3,13 @@
 class Crypto::CLI
 
   def call
-    puts "Todays Crypto Prices:"
     list_coins
     menu
     goodbye
   end
 
   def list_coins
+    puts "Todays Top 15 Cryptocurrencies:"
     puts "
       1. Bitcoin
       2. Ethereum
@@ -30,9 +30,9 @@ class Crypto::CLI
   end
 
   def menu
-    puts "Enter the number of the coin you would like more info on or type exit:"
     input = nil
     while input != "exit"
+      puts "Enter the number of the coin you would like more info on or type list to see coins or type exit:"
       input = gets.strip.downcase
       case input
       when "1"
@@ -65,6 +65,10 @@ class Crypto::CLI
         puts "more info on coin 14..."
       when "15"
         puts "more info on coin 15..."
+      when "list"
+        list_coins
+      else
+        puts "Does not compute. Type number, list, or exit:"
       end
     end
   end
