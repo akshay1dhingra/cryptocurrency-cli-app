@@ -3,6 +3,7 @@
 class Crypto::CLI
 
   def call
+    STDOUT.sync = true #this is needed as 'puts' does not write immediately to 'STDOU' but buffers the strings internally and writes the outpus in bigger chunks.
     list_coins
     menu
     goodbye
@@ -31,8 +32,9 @@ class Crypto::CLI
 
   def menu
     input = nil
-    while input != "exit"
-      puts "Enter the number of the coin you would like more info on or type list to see coins or type exit:"
+    while input != "done"
+      puts "Enter the number of the coin you would like more info on or type list to see coins or type done:"
+
       input = gets.strip.downcase
       case input
       when "1"
@@ -68,7 +70,7 @@ class Crypto::CLI
       when "list"
         list_coins
       else
-        puts "Does not compute. Type number, list, or exit:"
+        puts "Does not compute. Type number, list, or done:"
       end
     end
   end

@@ -11,4 +11,6 @@ LOG: I followed the video to get my cli.rb to start working via my bin/crypto fi
 
 01/31/18
 
-LOG: I was successfully able to add the new SSH key for my work computer and loaded it into my github account. 
+LOG: I was successfully able to add the new SSH key for my work computer and loaded it into my github account.
+
+LOG: I figured out why BASH was not printing out my 'puts' list immediately. BASH uses unix commands and when BASH is used on windows, it inherits the unix behavior of buffering strings internally and writing the output in bigger chunks. This was solved by adding 'STDOUT.sync = true' in my '.call' method before the command line hits the chunk of strings. When sync mode is true, all output is immediately flushed to the underlying operating system and is not buffered internally. 
