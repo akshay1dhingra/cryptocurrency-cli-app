@@ -1,5 +1,2 @@
-require "crypto/version"
-
-module Crypto
-  # Your code goes here...
-end
+require_relative "./crypto/version"
+require_relative './crypto/cli'
