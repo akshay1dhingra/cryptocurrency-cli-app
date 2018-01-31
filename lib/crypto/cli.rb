@@ -11,23 +11,7 @@ class Crypto::CLI
 
   def list_coins
     puts "Todays Top 15 Cryptocurrencies:"
-    puts "
-      1. Bitcoin
-      2. Ethereum
-      3. Ripple
-      4. Bitcoin Cash
-      5. Cardano
-      6. NEO
-      7. Lightcoin
-      8. Stellar
-      9. EOS
-      10.NEM
-      11.IOTA
-      12.DASH
-      13.Monero
-      14.TRON
-      15.ICON
-    "
+    @coins = Crypto::Coin.today
   end
 
   def menu
