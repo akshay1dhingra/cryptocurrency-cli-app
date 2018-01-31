@@ -70,7 +70,7 @@ class Crypto::CLI
   end
 
   def goodbye
-    puts "See you tomorrow and remember to HODL!"
+    puts "See you tomorrow and remember to HODL!!!!"
   end
 
 end

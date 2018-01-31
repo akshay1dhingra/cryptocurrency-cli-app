@@ -7,3 +7,8 @@ I can pull clone and push seamlessly. For some reason, my work computer already 
 LOG: I am now following Avis step by step video. Its getting late so I hope I can get through at least half of it tonight and finish the video tomorrow morning at work on that machine... lets hope it works!
 
 LOG: I followed the video to get my cli.rb to start working via my bin/crypto file and everything is working so far. I got to the 23.25 minute mark on the walk-through and its nearly midnight. time for bed. Mr. Robot logging off
+-------------------------------------------------------------------------------
+
+01/31/18
+
+LOG: I was successfully able to add the new SSH key for my work computer and loaded it into my github account. 
