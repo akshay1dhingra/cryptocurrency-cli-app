@@ -16,19 +16,20 @@ class Crypto::CLI
     #@coins = []
     @coins = Crypto::Coin.today
     @coins.each.with_index(1) do |coin, i|
-      binding.pry
+      #binding.pry
      puts "#{i}. #{coin.name}"
     end
   end
 
   def menu
     input = nil
+
     while input != "done"
 
       puts "Enter the number of the coin you would like more info on or type list to see coins or type done:"
       input = gets.strip.downcase
 
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i <= 15
         puts @coins[input.to_i-1].name
       elsif input == "list"
         list_coins
