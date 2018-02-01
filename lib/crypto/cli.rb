@@ -38,7 +38,6 @@ class Crypto::CLI
       puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type done:"
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= 15
-        #puts @coins[input.to_i-1].name
         coin_info(input)
       elsif input == "list"
         list_coins

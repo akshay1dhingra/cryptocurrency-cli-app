@@ -17,6 +17,10 @@ class Crypto::Coin
     #@@all << self
   end
 
+  def self.all
+    @@all
+  end
+
   def self.today
 
     #should return a bunch of instances of Coin
@@ -38,7 +42,7 @@ class Crypto::Coin
     #  15.ICON
     #"
     # now these new coin instances will be communicating with the website but it should look something like this
-    @@all << self.new("Bitcoin", "$172,44,976,937", "$10,266.40", "$8,576,320,000", "16,835,987 BTC", "-9.10%", "url", "x", "z" )
+    @@all << self.new("Bitcoin", "$172,44,976,937", "$10,266.40", "$8,576,320,000", "16,835,987 BTC", "-9.10%", "urlll", "xxx", "zzz" )
     #@@all << coin_1
     #coin.name = "Bitcoin"
     #coin.market_cap = "$172,44,976,937"
