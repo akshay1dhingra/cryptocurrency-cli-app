@@ -38,8 +38,8 @@ class Crypto::Coin
     #  15.ICON
     #"
     # now these new coin instances will be communicating with the website but it should look something like this
-    coin_1 = self.new("Bitcoin", "$172,44,976,937", "$10,266.40", "$8,576,320,000", "16,835,987 BTC", "-9.10%", "url", "x", "z" )
-    @@all << coin_1
+    @@all << self.new("Bitcoin", "$172,44,976,937", "$10,266.40", "$8,576,320,000", "16,835,987 BTC", "-9.10%", "url", "x", "z" )
+    #@@all << coin_1
     #coin.name = "Bitcoin"
     #coin.market_cap = "$172,44,976,937"
     #coin_1.price = "$10,266.40"
@@ -50,8 +50,8 @@ class Crypto::Coin
     #coin_1.url = "x"
     #coin_1.social = "z"
 
-    coin_2 = self.new("Ethereum", "10", "$11", "12", "13 ETH", "-9.10%", "url", "x", "z" )
-    @@all << coin_2
+    @@all << self.new("Ethereum", "10", "$11", "12", "13 ETH", "-9.10%", "url", "x", "z" )
+    #@@all << coin_2
     #coin_2.name = "Ethereum"
     #coin_2.market_cap = "$172,44,976,937"
     #coin_2.price = "$10,266.40"
