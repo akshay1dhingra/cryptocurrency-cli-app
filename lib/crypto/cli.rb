@@ -13,11 +13,11 @@ class Crypto::CLI
 
   def list_coins
     puts "Todays Top 15 Cryptocurrencies:"
-    @coins = []
-    @coins << Crypto::Coin.today
+    #@coins = []
+    @coins = Crypto::Coin.today
     @coins.each.with_index(1) do |coin, i|
-      #binding.pry
-      puts "#{i}. #{coin}"
+      binding.pry
+     puts "#{i}. #{coin.name}"
     end
   end
 
@@ -29,7 +29,7 @@ class Crypto::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @coins[input.to_i-1]
+        puts @coins[input.to_i-1].name
       elsif input == "list"
         list_coins
       elsif input == "done"
