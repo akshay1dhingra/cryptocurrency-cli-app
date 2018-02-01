@@ -6,12 +6,12 @@ class Crypto::CLI
 
   def call
     STDOUT.sync = true #this is needed as 'puts' does not write immediately to 'STDOU' but buffers the strings internally and writes the outpus in bigger chunks.
-    list_coins
+    todays_top_coins
     menu
     goodbye
   end
 
-  def list_coins
+  def todays_top_coins
     puts "Todays Top 15 Cryptocurrencies:"
     #@coins = []
     @coins = Crypto::Coin.today
@@ -19,6 +19,13 @@ class Crypto::CLI
       #binding.pry
      puts "#{i}. #{coin.name}"
     end
+  end
+
+  def list_coins
+    @coins.each.with_index(1) do |coin, i|
+      #binding.pry
+     puts "#{i}. #{coin.name}"
+   end
   end
 
   def menu
