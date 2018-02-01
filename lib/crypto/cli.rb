@@ -29,13 +29,13 @@ class Crypto::CLI
   end
 
   def coin_info(input)
-    puts "Price: #{@coins[input.to_i-1].price}, Market Cap: #{@coins[input.to_i-1].market_cap}, Volume: #{@coins[input.to_i-1].volume}, Circulation: #{@coins[input.to_i-1].circulation}, Change: #{@coins[input.to_i-1].change}, Chart: #{@coins[input.to_i-1].chart}, URL: #{@coins[input.to_i-1].url}, Social Media: #{@coins[input.to_i-1].social}" 
+    puts "Price: #{@coins[input.to_i-1].price}, Market Cap: #{@coins[input.to_i-1].market_cap}, Volume: #{@coins[input.to_i-1].volume}, Circulation: #{@coins[input.to_i-1].circulation}, Change: #{@coins[input.to_i-1].change}, Chart: #{@coins[input.to_i-1].chart}, URL: #{@coins[input.to_i-1].url}, Social Media: #{@coins[input.to_i-1].social}"
   end
 
   def menu
     input = nil
     while input != "done"
-      puts "Enter the number of the coin you would like more info on or type list to see coins or type done:"
+      puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type done:"
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= 15
         #puts @coins[input.to_i-1].name
