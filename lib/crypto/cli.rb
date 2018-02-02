@@ -25,6 +25,7 @@ class Crypto::CLI
   end
 
   def list_coins
+    puts ""
     @coins.each.with_index(1) do |coin, i|
      puts "#{i}. #{coin.name}"
    end
@@ -49,7 +50,7 @@ class Crypto::CLI
     input = nil
     while input != "done"
       puts ""
-      puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type done:"
+      puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type 'done' to close app:"
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= 15
         coin_info(input)
@@ -66,6 +67,7 @@ class Crypto::CLI
   end
 
   def goodbye
+    puts ""
     puts "See you tomorrow and remember to HODL!!!!"
   end
 

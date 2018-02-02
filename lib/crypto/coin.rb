@@ -22,25 +22,16 @@ class Crypto::Coin
   end
 
   def self.today
+    # scrape coinmarketcap.com and return top 15 coins with their information available for access
+    self.scrape_coins
+  end
 
-    #should return a bunch of instances of Coin
-    #puts "
-    #  1. Bitcoin
-    #  2. Ethereum
-    #  3. Ripple
-    #  4. Bitcoin Cash
-    #  5. Cardano
-    #  6. NEO
-    #  7. Lightcoin
-    #  8. Stellar
-    #  9. EOS
-    #  10.NEM
-    #  11.IOTA
-    #  12.DASH
-    #  13.Monero
-    #  14.TRON
-    #  15.ICON
-    #"
+  def self.scrape_coins
+    coins = []
+    # Go to coinmarketcap
+    # extract the properties
+    # instantiate a coin with its properties
+
     # now these new coin instances will be communicating with the website but it should look something like this
     @@all << self.new("Bitcoin", "$172,44,976,937", "$10,266.40", "$8,576,320,000", "16,835,987 BTC", "-9.10%", "urlll", "xxx", "zzz" )
     #@@all << coin_1
@@ -66,6 +57,7 @@ class Crypto::Coin
     #coin_2.url = "x"
     #coin_2.social = "z"
 
+    coins
   end
   #binding.pry
   #def new_coin
