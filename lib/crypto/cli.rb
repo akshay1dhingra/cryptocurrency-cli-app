@@ -13,8 +13,10 @@ class Crypto::CLI
   end
 
   def todays_top_coins
+    puts ""
     puts "Todays Top 15 Cryptocurrencies:"
     #@coins = []
+    puts ""
     @coins = Crypto::Coin.today
     #@coins.each.with_index(1) do |coin, i|
       #binding.pry
@@ -29,12 +31,24 @@ class Crypto::CLI
   end
 
   def coin_info(input)
-    puts "Price: #{@coins[input.to_i-1].price}, Market Cap: #{@coins[input.to_i-1].market_cap}, Volume: #{@coins[input.to_i-1].volume}, Circulation: #{@coins[input.to_i-1].circulation}, Change: #{@coins[input.to_i-1].change}, Chart: #{@coins[input.to_i-1].chart}, URL: #{@coins[input.to_i-1].url}, Social Media: #{@coins[input.to_i-1].social}"
+    puts ""
+    puts "--- COIN INFO ---"
+    puts "Price: #{@coins[input.to_i-1].price},"
+    puts "Market Cap: #{@coins[input.to_i-1].market_cap},"
+    puts "Volume: #{@coins[input.to_i-1].volume},"
+    puts "Circulation: #{@coins[input.to_i-1].circulation},"
+    puts "Change: #{@coins[input.to_i-1].change},"
+    puts "Chart: #{@coins[input.to_i-1].chart},"
+    puts "URL: #{@coins[input.to_i-1].url},"
+    puts "Social Media: #{@coins[input.to_i-1].social}"
+    puts "------------------"
+    puts ""
   end
 
   def menu
     input = nil
     while input != "done"
+      puts ""
       puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type done:"
       input = gets.strip.downcase
       if input.to_i > 0 && input.to_i <= 15
@@ -43,6 +57,8 @@ class Crypto::CLI
         list_coins
       elsif input == "done"
         break
+      elseif input == ""
+        puts ""
       else
         puts "Does not compute. Type number, list, or done:"
       end
