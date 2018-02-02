@@ -28,4 +28,6 @@ LOG: Fixed the duplication issue. the way i had my @#todays_top_coins method set
 
 02/02/18
 
-LOG: added empty spacing between sentences so that the command line is easier to read. 
+LOG: added empty spacing between sentences so that the command line is easier to read.
+
+LOG: fixed and updated gemspec file so that I can run bin/console and hop into pry. nokogiri is set up and up to date 
