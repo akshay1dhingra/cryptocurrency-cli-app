@@ -17,17 +17,17 @@ class Crypto::CLI
     puts "Todays Top 15 Cryptocurrencies:"
     #@coins = []
     puts ""
-    @coins = Crypto::Coin.today
+    @all_coins = Crypto::Coin.today
+    binding.pry
     #@coins.each.with_index(1) do |coin, i|
-      #binding.pry
      #puts "#{i}. #{coin.name}"
     #end
   end
 
   def list_coins
     puts ""
-    @coins.each.with_index(1) do |coin, i|
-     puts "#{i}. #{coin.name}"
+    @all_coins.name.each.with_index(1) do |coin, i|
+     puts "#{i}. #{coin}"
    end
   end
 
