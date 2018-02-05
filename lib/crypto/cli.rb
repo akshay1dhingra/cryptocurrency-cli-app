@@ -34,18 +34,20 @@ class Crypto::CLI
   end
 
   def coin_info(input)
+    @all_coins.each do |coins|
     puts ""
     puts "--- COIN INFO ---"
-    puts "Price: #{@all_coins[input.to_i-1].price},"
-    puts "Market Cap: #{@all_coins[input.to_i-1].market_cap},"
-    puts "Volume: #{@all_coins[input.to_i-1].volume},"
-    puts "Circulation: #{@all_coins[input.to_i-1].circulation},"
-    puts "Change: #{@all_coins[input.to_i-1].change},"
-    puts "Chart: #{@all_coins[input.to_i-1].chart},"
-    puts "URL: #{@all_coins[input.to_i-1].url},"
-    puts "Social Media: #{@all_coins[input.to_i-1].social}"
+    puts "Price: #{@coins.price[input.to_i-1]},"
+    puts "Market Cap: #{@coins.market_cap[input.to_i-1]},"
+    puts "Volume: #{@coins.volume[input.to_i-1]},"
+    puts "Circulation: #{@coins.circulation[input.to_i-1]},"
+    puts "Change: #{@coins.change[input.to_i-1]},"
+    puts "Chart: #{@coins.chart[input.to_i-1]},"
+    puts "URL: #{@coins.url[input.to_i-1]},"
+    puts "Social Media: #{@coins.social[input.to_i-1]}"
     puts "------------------"
     puts ""
+    end
   end
 
   def menu
