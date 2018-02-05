@@ -25,11 +25,10 @@ class Crypto::CLI
   end
 
   def list_coins
-    binding.pry
     puts ""
     @all_coins.each do |coins|
-      coins.each.with_index(1) do |coin, i|
-        puts "#{i}. #{coin.name}"
+      coins.name.each.with_index(1) do |coin, i|
+        puts "#{i}. #{coin}"
       end
     end
   end
@@ -37,14 +36,14 @@ class Crypto::CLI
   def coin_info(input)
     puts ""
     puts "--- COIN INFO ---"
-    puts "Price: #{@coins[input.to_i-1].price},"
-    puts "Market Cap: #{@coins[input.to_i-1].market_cap},"
-    puts "Volume: #{@coins[input.to_i-1].volume},"
-    puts "Circulation: #{@coins[input.to_i-1].circulation},"
-    puts "Change: #{@coins[input.to_i-1].change},"
-    puts "Chart: #{@coins[input.to_i-1].chart},"
-    puts "URL: #{@coins[input.to_i-1].url},"
-    puts "Social Media: #{@coins[input.to_i-1].social}"
+    puts "Price: #{@all_coins[input.to_i-1].price},"
+    puts "Market Cap: #{@all_coins[input.to_i-1].market_cap},"
+    puts "Volume: #{@all_coins[input.to_i-1].volume},"
+    puts "Circulation: #{@all_coins[input.to_i-1].circulation},"
+    puts "Change: #{@all_coins[input.to_i-1].change},"
+    puts "Chart: #{@all_coins[input.to_i-1].chart},"
+    puts "URL: #{@all_coins[input.to_i-1].url},"
+    puts "Social Media: #{@all_coins[input.to_i-1].social}"
     puts "------------------"
     puts ""
   end
