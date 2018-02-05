@@ -69,12 +69,12 @@ class Crypto::Coin
 
     #table = doc.css("#currencies tbody")
     coins = self.new
-    coins.name = doc.css(".currency-name-container").collect {|names| names.text}
-    coins.market_cap = doc.css(".circulating-supply").collect {|mc| mc.text}
-    coins.price = doc.css(".price").collect {|prices| prices.text}
-    coins.volume = doc.css(".volume").collect {|volumes| volumes.text}
-    coins.circulation = doc.css(".circulating-supply a").collect {|supplies| supplies.text}
-    coins.change = doc.css(".percent-24h").collect {|changes| changes.text}
+    coins.name = doc.css(".currency-name-container").collect {|names| names.text.chomp}
+    coins.market_cap = doc.css(".circulating-supply").collect {|mc| mc.text.chomp.gsub(" ","")}
+    coins.price = doc.css(".price").collect {|prices| prices.text.chomp}
+    coins.volume = doc.css(".volume").collect {|volumes| volumes.text.chomp}
+    coins.circulation = doc.css(".circulating-supply a").collect {|supplies| supplies.text.chomp}
+    coins.change = doc.css(".percent-24h").collect {|changes| changes.text.chomp}
     coins
     #binding.pry
   end
