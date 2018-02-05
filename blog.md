@@ -36,4 +36,8 @@ LOG: fixed and updated gemspec file so that I can run bin/console and hop into p
 
 LOG: STarted to scrape the coinmarketcap.com site. Having trouble picking the right information I need to display. Playing around with Nokogiri for a little while and looking online for clues
 
-LOG: I was able to find and scrape all the necessary data from the website for each attribute. I then spent the next several hours trying to get the array and methods to communicate to each other to spit out a list but have run into several roadblocks. Logging off for the day and tackling this issue later. Almost done with the lab. 
+LOG: I was able to find and scrape all the necessary data from the website for each attribute. I then spent the next several hours trying to get the array and methods to communicate to each other to spit out a list but have run into several roadblocks. Logging off for the day and tackling this issue later. Almost done with the lab.
+
+02/05/18
+
+LOG: My objects are not communicating properly. @all_coins is bringing up nested arrays. 

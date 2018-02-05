@@ -76,7 +76,7 @@ class Crypto::Coin
     coins.circulation = doc.css(".circulating-supply a").collect {|supplies| supplies.text}
     coins.change = doc.css(".percent-24h").collect {|changes| changes.text}
     coins
-    binding.pry
+    #binding.pry
   end
 
 
