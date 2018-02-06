@@ -14,7 +14,7 @@ class Crypto::CLI
 
   def todays_top_coins
     puts ""
-    puts "Todays Top 100 Cryptocurrencies:"
+    puts "Todays Top 50 Cryptocurrencies:"
     puts ""
     @coins = Crypto::Coin.today
   end
