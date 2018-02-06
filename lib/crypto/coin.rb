@@ -9,7 +9,7 @@ class Crypto::Coin
     @price = price
     @market_cap = market_cap
     @change = change
-    @volume = volume
+    #@volume = volume
     #@circulation = circulation
     #@chart = chart
     #@url = url
@@ -23,13 +23,13 @@ class Crypto::Coin
 
   def self.today
     # scrape coinmarketcap.com and return top 15 coins with their information available for access
-    self.scrape_coins
+    self.scrape_coinranking
   end
 
-  def self.scrape_coins
-    all_coins = [] #----> this is somehow breaking the code. commenting this out fixes the code
+  #def self.scrape_coins
+  #  all_coins = [] #----> this is somehow breaking the code. commenting this out fixes the code
 
-    all_coins << self.scrape_coinmarketcap
+  #  all_coins << self.scrape_coinmarketcap
 
     # Go to coinmarketcap
     # extract the properties
@@ -60,23 +60,26 @@ class Crypto::Coin
     #coin_2.url = "x"
     #coin_2.social = "z"
 
-    all_coins #---> this breaks the code somewhow. see line 30
+  #  all_coins #---> this breaks the code somewhow. see line 30
 
-  end
+  #end
 
-  def self.scrape_coinmarketcap
+  def self.scrape_coinranking
     doc = Nokogiri::HTML(open("https://coinranking.com/"))
 
-    #coin = self.new
+    #create an array of all the coins along with their attributes set that to a variable
     coins = doc.css(".coin-list__body .coin-list__body__row").collect do |rows|
       each_coin = rows.css("span").collect do |text|
         text.text
       end
     end
 
+    all_coins = []
+    #take the individual coin variable and assign each of its attributes to th
     coins.each do |coin|
       new_coin = self.new(name = coin[2], price = coin[3], market_cap = coin[6], change = coin[9].gsub("\t","").gsub("\n","") )
-      binding.pry
+      #binding.pry
+      all_coins << new_coin
       #new_coin.name = coin[2]
     end
     #binding.pry
@@ -93,7 +96,8 @@ class Crypto::Coin
     #coins
     #binding.pry
 
-
+    all_coins
+    binding.pry
   end
 
 

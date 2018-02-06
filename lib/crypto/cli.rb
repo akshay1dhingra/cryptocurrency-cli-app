@@ -17,8 +17,9 @@ class Crypto::CLI
     puts "Todays Top 100 Cryptocurrencies:"
     #@coins = []
     puts ""
+    #Crypto::Coin.today
     @all_coins = Crypto::Coin.today
-    #binding.pry
+    binding.pry
     #@coins.each.with_index(1) do |coin, i|
      #puts "#{i}. #{coin.name}"
     #end
