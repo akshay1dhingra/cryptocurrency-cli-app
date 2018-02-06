@@ -4,18 +4,18 @@ class Crypto::Coin
 
   attr_accessor :name, :market_cap, :price, :volume, :circulation, :change, :chart, :url, :social, :new_coin
 
-  #def initialize(name = nil, market_cap = nil, price = nil, volume = nil, circulation = nil, change = nil, chart = nil, url = nil, social = nil, new_coin = nil)
-  #  @name = name
-  #  @market_cap = market_cap
-  #  @price = price
-  #  @volume = volume
-  #  @circulation = circulation
-  #  @change = change
-  #  @chart = chart
-  #  @url = url
-  #  @social = social
-  #  #@@all << self
-#  end
+  def initialize(name = nil, price = nil, market_cap = nil, change = nil) #circulation = nil, change = nil, chart = nil, url = nil, social = nil, new_coin = nil)
+    @name = name
+    @price = price
+    @market_cap = market_cap
+    @change = change
+    @volume = volume
+    #@circulation = circulation
+    #@chart = chart
+    #@url = url
+    #@social = social
+    #@@all << self
+  end
 
   #def self.all
   #  @@all_coins
@@ -65,18 +65,35 @@ class Crypto::Coin
   end
 
   def self.scrape_coinmarketcap
-    doc = Nokogiri::HTML(open("https://coinmarketcap.com/"))
+    doc = Nokogiri::HTML(open("https://coinranking.com/"))
+
+    #coin = self.new
+    coins = doc.css(".coin-list__body .coin-list__body__row").collect do |rows|
+      each_coin = rows.css("span").collect do |text|
+        text.text
+      end
+    end
+
+    coins.each do |coin|
+      new_coin = self.new(name = coin[2], price = coin[3], market_cap = coin[6], change = coin[9].gsub("\t","").gsub("\n","") )
+      binding.pry
+      #new_coin.name = coin[2]
+    end
+    #binding.pry
+    #doc = Nokogiri::HTML(open("https://coinmarketcap.com/"))
 
     #table = doc.css("#currencies tbody")
-    coins = self.new
-    coins.name = doc.css(".currency-name-container").collect {|names| names.text.chomp}
-    coins.market_cap = doc.css(".circulating-supply").collect {|mc| mc.text.chomp.gsub(" ","")}
-    coins.price = doc.css(".price").collect {|prices| prices.text.chomp}
-    coins.volume = doc.css(".volume").collect {|volumes| volumes.text.chomp}
-    coins.circulation = doc.css(".circulating-supply a").collect {|supplies| supplies.text.chomp}
-    coins.change = doc.css(".percent-24h").collect {|changes| changes.text.chomp}
-    coins
+    #coins = self.new
+    #coins.name = doc.css(".currency-name-container").collect {|names| names.text.chomp}
+    #coins.market_cap = doc.css(".circulating-supply").collect {|mc| mc.text.chomp.gsub(" ","")}
+    #coins.price = doc.css(".price").collect {|prices| prices.text.chomp}
+    #coins.volume = doc.css(".volume").collect {|volumes| volumes.text.chomp}
+    #coins.circulation = doc.css(".circulating-supply a").collect {|supplies| supplies.text.chomp.gsub("/n","")}
+    #coins.change = doc.css(".percent-24h").collect {|changes| changes.text.chomp}
+    #coins
     #binding.pry
+
+
   end
 
 
