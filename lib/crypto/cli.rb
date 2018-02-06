@@ -15,31 +15,22 @@ class Crypto::CLI
   def todays_top_coins
     puts ""
     puts "Todays Top 100 Cryptocurrencies:"
-    #@coins = []
     puts ""
-    #Crypto::Coin.today
     @coins = Crypto::Coin.today
-    #@coins.each.with_index(1) {|coin, i| puts "#{i}. #{coin.name}"}
-    #binding.pry
-    #@coins.each.with_index(1) do |coin, i|
-     #puts "#{i}. #{coin.name}"
-    #end
   end
 
   def list_coins
     puts ""
-    #@all_coins.each do |coins|
       @coins.each.with_index(1) { |coin, i| puts "#{i}. #{coin.name}"}
-    #end
   end
 
   def coin_info(input)
     coin = @coins[input.to_i-1]
     puts ""
     puts "--- COIN INFO ---"
-    puts "Name: #{coin.name},"
-    puts "Price: #{coin.price},"
-    puts "Market Cap: #{coin.market_cap},"
+    puts "Name: #{coin.name}"
+    puts "Price: #{coin.price}"
+    puts "Market Cap: #{coin.market_cap}"
     puts "Change: #{coin.change}"
     puts "------------------"
     puts ""
