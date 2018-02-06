@@ -21,11 +21,13 @@ class Crypto::CLI
 
   def list_coins
     puts ""
+    #binding.pry
       @coins.each.with_index(1) { |coin, i| puts "#{i}. #{coin.name}"}
   end
 
   def coin_info(input)
     coin = @coins[input.to_i-1]
+    #binding.pry
     puts ""
     puts "--- COIN INFO ---"
     puts "Name: #{coin.name}"
