@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["akshay1dhingra@gmail.com"]
 
   spec.summary       = "Cryptocurrency Prices"
-  spec.description   = "Real time update on top 15 cryptocurrencies"
+  spec.description   = "Real time update on top 50 cryptocurrencies"
   spec.homepage      = "https://github.com/akshay1dhingra/akshaydhingra-cli-app"
   spec.license       = "MIT"
 

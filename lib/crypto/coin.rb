@@ -2,7 +2,7 @@ class Crypto::Coin
 
   #@@all_coins = []
 
-  attr_accessor :name, :market_cap, :price, :volume, :circulation, :change, :chart, :url, :social, :new_coin
+  attr_accessor :name, :market_cap, :price, :change, :chart, :new_coin
 
   def initialize(name = nil, price = nil, market_cap = nil, change = nil)
     @name = name
