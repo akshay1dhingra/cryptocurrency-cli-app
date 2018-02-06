@@ -21,7 +21,6 @@ class Crypto::CLI
 
   def list_coins
     puts ""
-    #binding.pry
       @coins.each.with_index(1) { |coin, i| puts "#{i}. #{coin.name}"}
   end
 
