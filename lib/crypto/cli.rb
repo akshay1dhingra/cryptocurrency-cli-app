@@ -2,7 +2,7 @@
 require 'pry'
 class Crypto::CLI
 
-  attr_accessor :coins, :name, :market_cap, :price, :change,
+  attr_accessor :coins, :name, :market_cap, :price, :volume, :circulation, :change, :chart, :url, :social
 
   def call
     STDOUT.sync = true #this is needed as 'puts' does not write immediately to 'STDOU' but buffers the strings internally and writes the outpus in bigger chunks.
@@ -14,7 +14,7 @@ class Crypto::CLI
 
   def todays_top_coins
     puts ""
-    puts "Todays Top 50 Cryptocurrencies:"
+    puts "Todays Top 100 Cryptocurrencies:"
     #@coins = []
     puts ""
     #Crypto::Coin.today
@@ -34,24 +34,15 @@ class Crypto::CLI
   end
 
   def coin_info(input)
-    #@all_coins.each do |coins|
     coin = @coins[input.to_i-1]
-    #puts "Price: #{coin.price}"
-    #binding.pry
     puts ""
     puts "--- COIN INFO ---"
     puts "Name: #{coin.name},"
     puts "Price: #{coin.price},"
     puts "Market Cap: #{coin.market_cap},"
-    #puts "Volume: #{@coins.volume[input.to_i-1]},"
-    #puts "Circulation: #{@coins.circulation[input.to_i-1]},"
-    puts "Change: #{coin.change},"
-    ##puts "Chart: #{@coins.chart[input.to_i-1]},"
-    #puts "URL: #{@coins.url[input.to_i-1]},"
-    #puts "Social Media: #{@coins.social[input.to_i-1]}"
+    puts "Change: #{coin.change}"
     puts "------------------"
     puts ""
-    #end
   end
 
   def menu
@@ -60,7 +51,7 @@ class Crypto::CLI
       puts ""
       puts "Enter the NUMBER of the coin you would like more info on or type 'list' to see list of coins or type 'done' to close app:"
       input = gets.strip.downcase
-      if input.to_i > 0 && input.to_i <= 15
+      if input.to_i > 0 && input.to_i <= 50
         coin_info(input)
       elsif input == "list"
         list_coins

@@ -42,4 +42,6 @@ LOG: I was able to find and scrape all the necessary data from the website for e
 
 LOG: My objects are not communicating properly. @all_coins is bringing up nested arrays.
 
-LOG: list_coins method now working properly and printing out an index list of top 100 coin names. Trying to see if I can print out just top 15 coins. If I decide not do go that route, this method is now 100% functioning its proper intention. 
+LOG: list_coins method now working properly and printing out an index list of top 100 coin names. Trying to see if I can print out just top 15 coins. If I decide not do go that route, this method is now 100% functioning its proper intention.
+
+LOG: fixed the issues causing the project to pass its requirements. the Gem is functional. 
