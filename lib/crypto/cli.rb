@@ -18,8 +18,9 @@ class Crypto::CLI
     #@coins = []
     puts ""
     #Crypto::Coin.today
-    @all_coins = Crypto::Coin.today
-    binding.pry
+    @coins = Crypto::Coin.today
+    #@coins.each.with_index(1) {|coin, i| puts "#{i}. #{coin.name}"}
+    #binding.pry
     #@coins.each.with_index(1) do |coin, i|
      #puts "#{i}. #{coin.name}"
     #end
@@ -27,11 +28,9 @@ class Crypto::CLI
 
   def list_coins
     puts ""
-    @all_coins.each do |coins|
-      coins.name.each.with_index(1) do |coin, i|
-        puts "#{i}. #{coin}"
-      end
-    end
+    #@all_coins.each do |coins|
+      @coins.each.with_index(1) { |coin, i| puts "#{i}. #{coin.name}"}
+    #end
   end
 
   def coin_info(input)

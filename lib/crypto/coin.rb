@@ -24,6 +24,8 @@ class Crypto::Coin
   def self.today
     # scrape coinmarketcap.com and return top 15 coins with their information available for access
     self.scrape_coinranking
+    #@all_coins
+    #binding.pry
   end
 
   #def self.scrape_coins
@@ -74,12 +76,12 @@ class Crypto::Coin
       end
     end
 
-    all_coins = []
+    @all_coins = []
     #take the individual coin variable and assign each of its attributes to th
     coins.each do |coin|
       new_coin = self.new(name = coin[2], price = coin[3], market_cap = coin[6], change = coin[9].gsub("\t","").gsub("\n","") )
       #binding.pry
-      all_coins << new_coin
+      @all_coins << new_coin
       #new_coin.name = coin[2]
     end
     #binding.pry
@@ -96,9 +98,8 @@ class Crypto::Coin
     #coins
     #binding.pry
 
-    all_coins
-    binding.pry
+    @all_coins
+    #binding.pry
   end
-
 
 end
