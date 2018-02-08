@@ -2,8 +2,6 @@
 require 'pry'
 class Crypto::CLI
 
-  attr_accessor :coins, :name, :market_cap, :price, :volume, :circulation, :change, :chart, :url, :social
-
   def call
     STDOUT.sync = true #this is needed as 'puts' does not write immediately to 'STDOU' but buffers the strings internally and writes the outpus in bigger chunks.
     todays_top_coins
@@ -16,7 +14,7 @@ class Crypto::CLI
     puts ""
     puts "Todays Top 50 Cryptocurrencies:"
     puts ""
-    @coins = Crypto::Coin.today
+    @coins = Crypto::Scraper.scrape_coinranking
   end
 
   def list_coins
@@ -26,7 +24,6 @@ class Crypto::CLI
 
   def coin_info(input)
     coin = @coins[input.to_i-1]
-    #binding.pry
     puts ""
     puts "--- COIN INFO ---"
     puts "Name: #{coin.name}"
