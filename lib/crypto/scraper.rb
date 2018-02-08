@@ -10,7 +10,7 @@ class Crypto::Scraper
       end
     end
 
-    #take the individual coin variable and assign each of its attributes to th
+    #iterate through coins variable and take an individual coin and assign each of its attributes to their corresponding attributes
     coins.each do |coin|
       new_coin = Crypto::Coin.new(name = coin[2], price = coin[3], market_cap = coin[6], change = coin[9].gsub("\t","").gsub("\n","") )
       Crypto::Coin.all << new_coin #@all_coins << new_coin

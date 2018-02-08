@@ -12,10 +12,6 @@ class Crypto::Coin
 
   end
 
-  def self.today
-    Crypto::Scraper.scrape_coinranking
-  end
-
   def self.all
     @@all_coins
   end

@@ -46,7 +46,7 @@ class Crypto::CLI
         list_coins
       elsif input == "done"
         break
-      elseif input == ""
+      elsif input == ""
         puts ""
       else
         puts "Does not compute. Type number, list, or done:"
