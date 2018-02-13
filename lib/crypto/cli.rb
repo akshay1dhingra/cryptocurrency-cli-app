@@ -30,6 +30,7 @@ class Crypto::CLI
     puts "Price: #{coin.price}"
     puts "Market Cap: #{coin.market_cap}"
     puts "Change: #{coin.change}"
+    puts "Description: #{coin.description}"
     puts "------------------"
     puts ""
   end

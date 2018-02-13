@@ -44,4 +44,8 @@ LOG: My objects are not communicating properly. @all_coins is bringing up nested
 
 LOG: list_coins method now working properly and printing out an index list of top 100 coin names. Trying to see if I can print out just top 15 coins. If I decide not do go that route, this method is now 100% functioning its proper intention.
 
-LOG: fixed the issues causing the project to pass its requirements. the Gem is functional. 
+LOG: fixed the issues causing the project to pass its requirements. the Gem is functional.
+
+02/12/18
+
+LOG: I added the description for each coin into the gem. I did this by creating another nokogiri scrape of the url associated with each_coin, then grabbing the text description within each of those pages and shoveling that into the each_coin array and assigning that to corresponding objects' description attribute.
