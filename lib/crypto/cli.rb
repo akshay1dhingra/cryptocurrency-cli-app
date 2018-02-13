@@ -15,6 +15,7 @@ class Crypto::CLI
     puts "Todays Top 50 Cryptocurrencies:"
     puts ""
     @coins = Crypto::Scraper.scrape_coinranking
+    #binding.pry
   end
 
   def list_coins

@@ -7,6 +7,7 @@ class Crypto::Scraper
     coins = doc.css(".coin-list__body .coin-list__body__row").collect do |row|
       each_coin = row.css("span").collect do |text|
         text.text
+        #binding.pry
       end
       #this opens up the link for each page and within that link i grab the description of each coin and shovel that into the each_coin array
       page2 = Nokogiri::HTML(open(row.attr("href")))
